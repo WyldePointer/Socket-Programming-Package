@@ -15,3 +15,4 @@ Imagine someone who is calling his friend on the phone. The one who is calling i
 # What is the relation between Sockets and Client-Server model?
 Sockets are meant to be used on Client-Server models. By saying "Client Server", I mean any model that is going to setup a communication path between two processes or etc. 
 So the most important usage of sockets are introduced in the Client-Server model as **channels** in the communication.
+Notice that the client does need to know the address(phone number :D) of the server but the server doesn't need that for just responding to him prior to that connection. But as soon as the communication is established between them, they both can send and recieve the data and they can grab each other's ip and other informations.
