@@ -10,8 +10,8 @@ Learn how to use sockets in IPC, TCP/IP and Advanced Network Programming.
 Well, To be simple, Socket is a way of communication between two things. Like the sockets which are used in the electrical accessories that connect that accessory to the power source, the socket concept in programming and networking easily connect two computers, processes or two other things which are present in computer and networking, which will be covered soon.
 
 # Introduction: What is a client-Server model?
-Imagine someone who is calling his friend on the phone. The one who is calling is called a *client* and the one who is going to respond to this action and pick the phone up, is called a *server*.
+Imagine someone who is calling his friend on the phone. The one who is calling is called a **client** and the one who is going to respond to this action and pick the phone up, is called a **server**.
 
 # What is the relation between Sockets and Client-Server model?
 Sockets are meant to be used on Client-Server models. By saying "Client Server", I mean any model that is going to setup a communication path between two processes or etc. 
-So the most important usage of sockets are introduced in the Client-Server model as *channels* in the communication.
+So the most important usage of sockets are introduced in the Client-Server model as **channels** in the communication.
