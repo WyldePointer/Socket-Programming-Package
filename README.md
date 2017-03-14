@@ -32,3 +32,9 @@ Keep up with the following steps to create a new socket on the client side:
 * Listen for connections with the listen() system call.
 * Accept a connection with the accept() system call. This call is blocked untill a connection is successfully created.
 * Send and recieve data.
+
+# Socket Information
+There are two critical things that each program must define after creating a new socket. Those are:
+* Address Domain
+* Socket Type
+Remember that two processes are able to communicate with each other if they have the same socket types in the same domain.
