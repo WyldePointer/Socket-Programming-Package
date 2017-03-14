@@ -22,8 +22,8 @@ To communicate, both server and the client need to create a Socket connection on
 
 # Creating the Socket: The client side
 Keep up with the following steps to create a new socket on the client side:
-	1. Create a socket with the socket() system call.
-	1. Connect the socket to the address of the server using the connect() system call.
-	1. Send and recieve data. The simplest way is to use the read() and write() system calls.
+* Create a socket with the socket() system call.
+* Connect the socket to the address of the server using the connect() system call.
+*Send and recieve data. The simplest way is to use the read() and write() system calls.
 
 # Creating the Socket: The server side
