@@ -19,3 +19,10 @@ Notice that the client does need to know the address(phone number :D) of the ser
 
 # Establishing a Socket
 To communicate, both server and the client need to create a Socket connection on their sides. So the Socket connection is opened by client and the server. You will get familiar of working with these sockets and passing the data through them very soon.
+
+# Creating the Socket: The client side
+Keep up with the following steps to create a new socket on the client side:
+	1. Create a socket with the socket() system call.
+	2. Connect the socket to the address of the server using the connect() system call.
+	3. Send and recieve data. The simplest way is to use the read() and write() system calls.
+
