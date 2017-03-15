@@ -1,4 +1,4 @@
-/*Socket Programming with C
+/* Socket Programming with C
 * ========================================
 * [] File Name : TCP_SOCKET_PROGRAMMING.c
 *
@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <sys/socket.h>
+#include <arpa/inet.h>
 
 struct inAddress
 {
@@ -33,9 +34,16 @@ int main(int argc,char* argv[])
 	*  return value: socket descriptor
 	*/
 	int socketDsc = socket(AF_INET,SOCK_STREAM,0);
+	
 	struct socketAddressIn server;
 	if(socketDsc == -1)
 		printf("Cannot create a socket.");
+		
+	server.address.socketAddress = inet_addr("216.58.211.110");
+	server.family = AF_INET;
+	server.port = htons(80);
+		
+		
 	
 }
 
