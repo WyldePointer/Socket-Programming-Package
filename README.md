@@ -43,6 +43,7 @@ Remember that two processes are able to communicate with each other if they have
 There are two most important domain types:
 * UNIX Domain
 * Internet Domain
+
 In the  **UNIX Domain**, two processes share a common **file system** communication, Since the UNIX is using the file system to share the data between the processes.
 The **Internet Domain** is the domain in which two processes runnning on any two hosts on the internet communicate.
 
