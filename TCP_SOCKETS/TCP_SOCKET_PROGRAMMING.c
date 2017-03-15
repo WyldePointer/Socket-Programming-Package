@@ -11,6 +11,20 @@
 #include <stdio.h>
 #include <sys/socket.h>
 
+struct socketAddressIn
+{
+	short family;			//Address Family(AF_INET)
+	unsigned short port;	//Port Number'
+	struct inAddress address;
+	char zero[8];
+}
+
+struct inAddress
+{
+	unsigned long socketAddress;
+}
+
+
 int main(int argc,char argv*[])
 {
 	/* socket system call
@@ -20,6 +34,10 @@ int main(int argc,char argv*[])
 	*  return value: socket descriptor
 	*/
 	int socketDsc = socket(AF_INET,SOCK_STREAM,0);
+	struct socketAddressIn server;
+	if(socketDsc == -1)
+		printf("Cannot create a socket.");
+	
 }
 
 
