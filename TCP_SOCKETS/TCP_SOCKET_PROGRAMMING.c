@@ -25,6 +25,13 @@ struct socketAddressIn
 	char zero[8];
 };
 
+struct sockaddr 
+{
+	unsigned short family;		// Address Family
+	char data[14];		// 14 bytes of protocol address 
+}
+
+
 int main(int argc,char* argv[])
 {
 	/* socket system call
@@ -42,9 +49,14 @@ int main(int argc,char* argv[])
 	server.address.socketAddress = inet_addr("216.58.211.110");
 	server.family = AF_INET;
 	server.port = htons(80);
-		
-		
 	
+	if(connect(socketDsc, (struct sockaddr *)&server, sizeof(server)) < 0)
+		{
+			puts("Connection Error");
+			return 1;
+		}
+	puts("Connected");
+	return 0;
 }
 
 
