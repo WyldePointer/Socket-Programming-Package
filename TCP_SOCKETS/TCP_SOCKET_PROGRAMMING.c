@@ -34,6 +34,8 @@ int main(int argc,char* argv[])
 	*  return value: socket descriptor
 	*/
 	int socketDsc = socket(AF_INET,SOCK_STREAM,0);
+	/* This is used as the data to be sent over the socket */
+	char *message;
 	
 	struct socketAddressIn server;
 	if(socketDsc == -1)
@@ -50,6 +52,10 @@ int main(int argc,char* argv[])
 			return 1;
 		}
 	puts("Connected");
+	
+	/* Sending data over the socket */
+	message = "Hi, My name is hello world :D";
+	
 	return 0;
 }
 
