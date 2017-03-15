@@ -50,3 +50,9 @@ The **Internet Domain** is the domain in which two processes runnning on any two
 Each of the domain types discussed above, has it's own address format.
 * The address of a socket in the UNIX domain is a character string which is basically an entry in the file system.
 * The address of a socket in the Internet domain consist of IP Address of the host + Port Number on that host.
+
+## Review: IP Address and Port Number
+Every computer on the internet has a unique 32 bit address which is called IP Address.
+Each port number is a 16 bit unsigned integer which shows the doors through that host or computer.
+
+
