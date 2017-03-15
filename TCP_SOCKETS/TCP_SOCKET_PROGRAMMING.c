@@ -25,13 +25,6 @@ struct socketAddressIn
 	char zero[8];
 };
 
-struct sockaddr 
-{
-	unsigned short family;		// Address Family
-	char data[14];		// 14 bytes of protocol address 
-}
-
-
 int main(int argc,char* argv[])
 {
 	/* socket system call
@@ -50,6 +43,7 @@ int main(int argc,char* argv[])
 	server.family = AF_INET;
 	server.port = htons(80);
 	
+	/* Client side connecton to the server: https://google.com */
 	if(connect(socketDsc, (struct sockaddr *)&server, sizeof(server)) < 0)
 		{
 			puts("Connection Error");
