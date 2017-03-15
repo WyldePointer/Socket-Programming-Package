@@ -13,8 +13,8 @@
 
 struct socketAddressIn
 {
-	short family;			//Address Family(AF_INET)
-	unsigned short port;	//Port Number'
+	short family;		//Address Family(AF_INET)
+	unsigned short port;		//Port Number
 	struct inAddress address;
 	char zero[8];
 }
