@@ -55,6 +55,13 @@ int main(int argc,char* argv[])
 	
 	/* Sending data over the socket */
 	message = "Hi, My name is hello world :D";
+	if(send(socketDsc, message, strlen(message), 0) < 0)
+		{
+			puts("Sent Failed");
+			return 1;
+		}
+	puts("Message Sent");
+	return 0;
 	
 	return 0;
 }
