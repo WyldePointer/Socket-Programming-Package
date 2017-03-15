@@ -45,3 +45,8 @@ There are two most important domain types:
 * Internet Domain
 In the  **UNIX Domain**, two processes share a common **file system** communication, Since the UNIX is using the file system to share the data between the processes.
 The **Internet Domain** is the domain in which two processes runnning on any two hosts on the internet communicate.
+
+## Address Domain Type Formats
+Each of the domain types discussed above, has it's own address format.
+* The address of a socket in the UNIX domain is a character string which is basically an entry in the file system.
+* The address of a socket in the Internet domain consist of IP Address of the host + Port Number on that host.
