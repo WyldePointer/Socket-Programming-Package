@@ -33,13 +33,13 @@ Keep up with the following steps to create a new socket on the client side:
 * Accept a connection with the accept() system call. This call is blocked untill a connection is successfully created.
 * Send and recieve data.
 
-# Socket Information
+# Socket Details
 There are two critical things that each program must define after creating a new socket. Those are:
 * Address Domain
 * Socket Type
 Remember that two processes are able to communicate with each other if they have the same socket types in the same domain.
 
-# Address Domain Types
+## Address Domain Types
 There are two most important domain types:
 * UNIX Domain
 * Internet Domain
@@ -56,4 +56,14 @@ Each of the domain types discussed above, has it's own address format.
 Every computer on the internet has a unique 32 bit address which is called IP Address.
 Each port number is a 16 bit unsigned integer which shows the doors through that host or computer.
 
+## Socket Types
+Two major sockets are:
+* Stream Sockets
+* Datagram Sockets
 
+Stream sockets treat communications as a continuous **stream of characters**, while the Datagram sockets have to read the **entire messages at once**.
+Each of these sockets has its own **communication protocol**.
+
+## Communication Protocols: TCP vs UDP
+Stream sockets use TCP(Transmission Control Protocol), which is a a reliable and stream oriented protocol.
+Datagram sockets use UDP(Unix Datagram Protocol), which is unreliable and message oriented.
