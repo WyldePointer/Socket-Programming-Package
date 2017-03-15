@@ -1,5 +1,4 @@
-/*
-*  Socket Programming with C
+/*Socket Programming with C
 * ========================================
 * [] File Name : TCP_SOCKET_PROGRAMMING.c
 *
@@ -14,8 +13,7 @@
 
 int main(int argc,char argv*[])
 {
-	/*
-    *  socket system call
+	/* socket system call
 	*  Address Familiy - AF_INET(IP Ver 4)
 	*  Type - SOCK_STREAM(connection oriented TCP Protocol)
 	*  Protocol - 0(IP Protocol)  
