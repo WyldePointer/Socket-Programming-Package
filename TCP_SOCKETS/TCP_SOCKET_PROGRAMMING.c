@@ -11,21 +11,20 @@
 #include <stdio.h>
 #include <sys/socket.h>
 
+struct inAddress
+{
+	unsigned long socketAddress;
+};
+
 struct socketAddressIn
 {
 	short family;		//Address Family(AF_INET)
 	unsigned short port;		//Port Number
 	struct inAddress address;
 	char zero[8];
-}
+};
 
-struct inAddress
-{
-	unsigned long socketAddress;
-}
-
-
-int main(int argc,char argv*[])
+int main(int argc,char* argv[])
 {
 	/* socket system call
 	*  Address Familiy - AF_INET(IP Ver 4)
