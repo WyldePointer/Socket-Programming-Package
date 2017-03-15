@@ -38,3 +38,10 @@ There are two critical things that each program must define after creating a new
 * Address Domain
 * Socket Type
 Remember that two processes are able to communicate with each other if they have the same socket types in the same domain.
+
+# Address Domain Types
+There are two most important domain types:
+* UNIX Domain
+* Internet Domain
+In the  **UNIX Domain**, two processes share a common **file system** communication, Since the UNIX is using the file system to share the data between the processes.
+The **Internet Domain** is the domain in which two processes runnning on any two hosts on the internet communicate.
