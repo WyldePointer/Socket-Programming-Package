@@ -59,5 +59,8 @@ int main(int argc, char* argv[])
 		 strcpy(ip[i], inet_ntoa(*address_list[i]));
 	 }
 	 
+	 printf("%s resolved to %", host_name, ip);
+	 return 0;
+	 
 	 
 }
