@@ -13,6 +13,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
+#include <stdio.h>
 
 int main(int argc, char* argv[])
 {
@@ -56,10 +57,10 @@ int main(int argc, char* argv[])
 	 for (i = 0; address_list[i] != NULL; i++)
 	 {
 		 /* Copy the first address in that list to the ip */
-		 strcpy(ip[i], inet_ntoa(*address_list[i]));
+		 strcpy(ip, inet_ntoa(*address_list[i]));
 	 }
 	 
-	 printf("%s resolved to %", host_name, ip);
+	 printf("%s resolved to %s", host_name, ip);
 	 return 0;
 	 
 	 
