@@ -12,6 +12,7 @@
 #include <sys/socket.h>
 #include <string.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 struct inAddress
 {
@@ -69,12 +70,9 @@ int main(int argc,char* argv[])
 		puts("recieve failed");
 	puts("server responded: ");
 	puts(server_response);
-	
-	
+	close(socketDsc);
 	
 	return 0;
-	
-	
 }
 
 
