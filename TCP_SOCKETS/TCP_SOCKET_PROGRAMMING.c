@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <sys/socket.h>
+#include <string.h>
 #include <arpa/inet.h>
 
 struct inAddress
@@ -36,6 +37,7 @@ int main(int argc,char* argv[])
 	int socketDsc = socket(AF_INET,SOCK_STREAM,0);
 	/* This is used as the data to be sent over the socket */
 	char *message;
+	char *server_response[2000];
 	
 	struct socketAddressIn server;
 	if(socketDsc == -1)
@@ -61,9 +63,18 @@ int main(int argc,char* argv[])
 			return 1;
 		}
 	puts("Message Sent");
-	return 0;
+	
+	/* Recieve data from the server */
+	if(recv(socketDsc, server_response, 2000, 0) < 0)
+		puts("recieve failed");
+	puts("server responded: ");
+	puts(server_response);
+	
+	
 	
 	return 0;
+	
+	
 }
 
 
