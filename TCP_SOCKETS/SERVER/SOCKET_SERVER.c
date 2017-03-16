@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 	 /* A simple counter */
 	 int i = 0;
 	 
-	 if ((he = gethostbyname(host_name)) == null)
+	 if ((he = gethostbyname(host_name)) == NULL)
 		{
 			/* gethostbyname has been failed */
 			herror("gethostbyname");
@@ -52,6 +52,12 @@ int main(int argc, char* argv[])
 	
 	/* Cast long ing h_addr_list to unsigned long in in_addr */
 	address_list = (struct in_addr **)he->h_addr_list;
+	 
+	 for (i = 0; address_list[i] != NULL; i++)
+	 {
+		 /* Copy the first address in that list to the ip */
+		 strcpy(ip[i], inet_ntoa(*address_list[i]));
+	 }
 	 
 	 
 }
