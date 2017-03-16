@@ -1,6 +1,6 @@
 /* Socket Programming with C
 * ========================================
-* [] File Name : TCP_SOCKET_PROGRAMMING.c
+* [] File Name : SOCKET_CLIENT.c
 *
 * [] Creation Date : March 2017
 *
@@ -70,6 +70,7 @@ int main(int argc,char* argv[])
 		puts("recieve failed");
 	puts("server responded: ");
 	puts(server_response);
+	
 	close(socketDsc);
 	
 	return 0;
