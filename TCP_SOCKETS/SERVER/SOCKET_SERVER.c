@@ -43,5 +43,15 @@ int main(int argc, char* argv[])
 	 /* A simple counter */
 	 int i = 0;
 	 
+	 if ((he = gethostbyname(host_name)) == null)
+		{
+			/* gethostbyname has been failed */
+			herror("gethostbyname");
+			return 1;
+		}
+	
+	/* Cast long ing h_addr_list to unsigned long in in_addr */
+	address_list = (struct in_addr **)he->h_addr_list;
+	 
 	 
 }
