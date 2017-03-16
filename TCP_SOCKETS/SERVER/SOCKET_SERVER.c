@@ -57,6 +57,9 @@ int main(int argc, char* argv[])
 	 for (i = 0; address_list[i] != NULL; i++)
 	 {
 		 /* Copy the first address in that list to the ip */
+		 /* the function inet_ntoa will convert the ip in long
+		  * format to the dotted format.
+		  * */
 		 strcpy(ip, inet_ntoa(*address_list[i]));
 	 }
 	 
