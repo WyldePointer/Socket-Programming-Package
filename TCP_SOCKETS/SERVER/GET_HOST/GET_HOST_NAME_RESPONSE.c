@@ -1,6 +1,6 @@
 /* Socket Programming with C
 * ========================================
-* [] File Name : SOCKET_SERVER.c
+* [] File Name : GET_HOST_NAME_RESPONSE.c
 *
 * [] Creation Date : March 2017
 *
