@@ -29,7 +29,12 @@ int main()
 	server.sin_addr.s_addr = INADDR_ANY;
 	server.sin_port = htons(8888);
 	
-	
+	/* Bind the socket to a port */
+	if(bind(socketDsc, (struct sockaddr*)&server, sizeof(server)) < 0)
+		puts("bind failed");
+	else
+		puts("bind done");
+	return 0;
 	
 }
 
