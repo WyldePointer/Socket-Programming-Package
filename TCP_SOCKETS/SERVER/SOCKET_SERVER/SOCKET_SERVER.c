@@ -34,10 +34,21 @@ int main()
 		puts("bind failed");
 	else
 		puts("bind done");
-	return 0;
-	
+
 	/* Listen for connections with backlog queue size = 5 */
 	listen(socketDsc,5);
 	
+	/* Accept the incoming connections */
+	puts("Waiting for incoming connections");
+	int newSocketDsc;
+	int temp_size;
+	struct sockaddr_in client;
+	newSocketDsc = accept(socketDsc, (struct sockaddr*)&client, (socklen_t*)&temp_size);
+	if(newSocketDsc < 0)
+		perror("Accepting failed...");
+	else
+		puts("Connection accepted...");
+
+return 0;
 }
 
