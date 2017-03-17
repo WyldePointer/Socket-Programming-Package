@@ -36,5 +36,8 @@ int main()
 		puts("bind done");
 	return 0;
 	
+	/* Listen for connections with backlog queue size = 5 */
+	listen(socketDsc,5);
+	
 }
 

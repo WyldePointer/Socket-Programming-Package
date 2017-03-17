@@ -73,3 +73,6 @@ Datagram sockets use UDP(Unix Datagram Protocol), which is unreliable and messag
 2. **in_addr** - Ip address in long format
 3. **sockaddr**
 4. **hostent** - The ip addresses of a hostname. Used by gethostbyname
+
+# Listen system call
+The listen system call allows the process to listen on the socket for connections. The first argument is the socket file descriptor, and the second is the size of the backlog queue, i.e., the number of connections that can be waiting while the process is handling a particular connection. This should be set to 5, the maximum size permitted by most systems. If the first argument is a valid socket, this call cannot fail, and so the code doesn't check for errors.
