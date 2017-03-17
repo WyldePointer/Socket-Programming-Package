@@ -67,3 +67,9 @@ Each of these sockets has its own **communication protocol**.
 ## Communication Protocols: TCP vs UDP
 Stream sockets use TCP(Transmission Control Protocol), which is a a reliable and stream oriented protocol.
 Datagram sockets use UDP(Unix Datagram Protocol), which is unreliable and message oriented.
+
+## Review of some important structures
+1. **sockaddr_in** - Connection information. Used by connect , send , recv etc.
+2. **in_addr** - Ip address in long format
+3. **sockaddr**
+4. **hostent** - The ip addresses of a hostname. Used by gethostbyname
