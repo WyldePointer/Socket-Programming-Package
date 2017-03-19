@@ -76,3 +76,7 @@ Datagram sockets use UDP(Unix Datagram Protocol), which is unreliable and messag
 
 # Listen system call
 The listen system call allows the process to listen on the socket for connections. The first argument is the socket file descriptor, and the second is the size of the backlog queue, i.e., the number of connections that can be waiting while the process is handling a particular connection. This should be set to 5, the maximum size permitted by most systems. If the first argument is a valid socket, this call cannot fail, and so the code doesn't check for errors.
+
+# Live(always alive) Server
+While trying to set up a server to listen for the connections, Its better to set it up as a Live Server, Meaning that it should wait for all of the connections to connect, until its shut down manually.
+We can do this by keeping the accept system call in a loop until its manually shuts down.
