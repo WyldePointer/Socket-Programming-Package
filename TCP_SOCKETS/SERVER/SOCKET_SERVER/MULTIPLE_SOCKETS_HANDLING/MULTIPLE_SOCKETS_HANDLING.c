@@ -86,10 +86,26 @@ int main()
 return 0;
 }
 
+/*
+ * This will handle connection for each client
+ * */
 void *connection_handler(void *socketDsc)
 {
-
-
-
+    //Get the socket descriptor
+    int sock = *(int*)socketDsc;
+     
+    char *message;
+     
+    //Send some messages to the client
+    message = "Greetings! I am your connection handler\n";
+    write(sock , message , strlen(message));
+     
+    message = "Its my duty to communicate with you";
+    write(sock , message , strlen(message));
+     
+    //Free the socket pointer
+    free(socketDsc);
+     
+    return 0;
 }
 
