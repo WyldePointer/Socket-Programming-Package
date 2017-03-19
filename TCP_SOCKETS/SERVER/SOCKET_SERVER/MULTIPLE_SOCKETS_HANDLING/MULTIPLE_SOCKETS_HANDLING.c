@@ -46,6 +46,8 @@ int main()
 	int newSocketDsc;
 	int temp_size;
 	struct sockaddr_in client;
+	/* will be used on pthread_create calling */
+	int *new_sock;
 	while((newSocketDsc = accept(socketDsc, (struct sockaddr*)&client, (socklen_t*)&temp_size)))
 	{
 		puts("Connection Accepted");
@@ -53,6 +55,18 @@ int main()
 		char *message;
 		message = "Hi mr client. I just recieved your connection request";
 		write(newSocketDsc,message,strlen(message));
+		
+		/* Create a new thread for that new socket (client) */
+		pthread response_thread;
+		new_sock = malloc(1);
+		*new_sock = newSocketDsc;
+		
+		if(pthread_create(&response_thread,NULL,connection_handler,(void*)new_sock) < 0)
+		{
+			perror("Could not create the thread");
+			return 1;
+		}
+		
 	}
 	
 	if(newSocketDsc < 0)
