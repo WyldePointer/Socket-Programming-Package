@@ -1,6 +1,6 @@
 /* Socket Programming with C
 * ========================================
-* [] File Name : SOCKET_SERVER.c
+* [] File Name : GET_CLIENT_IP.c
 *
 * [] Creation Date : March 2017
 *
@@ -48,7 +48,11 @@ int main()
 		perror("Accepting failed...");
 	else
 		puts("Connection accepted...");
-		
+	
+	/* Get the IP address of the client */
+	char *client_ip = inet_ntoa(client.sin_addr);
+	/* Get the PORT */
+	int client_port = ntohs(client.sin_port);	
 		
 
 return 0;
