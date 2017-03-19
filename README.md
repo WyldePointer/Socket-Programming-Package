@@ -80,3 +80,7 @@ The listen system call allows the process to listen on the socket for connection
 # Live(always alive) Server
 While trying to set up a server to listen for the connections, Its better to set it up as a Live Server, Meaning that it should wait for all of the connections to connect, until its shut down manually.
 We can do this by keeping the accept system call in a loop until its manually shuts down.
+
+# Handle multiple socket connections with threads
+To handle every connection we need a separate handling code to run along with the main server accepting connections.
+One way to achieve this is using threads. The main server program accepts a connection and creates a new thread to handle communication for the connection, and then the server goes back to accept more connections. On Linux threading can be done with the pthread (posix threads) library. It would be good to read some small tutorial about it if you dont know anything about it. However the usage is not very complicated.
