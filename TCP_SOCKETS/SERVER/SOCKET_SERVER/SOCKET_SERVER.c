@@ -49,7 +49,11 @@ int main()
 	else
 		puts("Connection accepted...");
 		
-		
+	/* Reply to the client */
+	char *message;
+	message = "Hi mr client. I just recieved your connection request";
+	write(newSocketDsc,message,(sizeof)message);
+	
 
 return 0;
 }
