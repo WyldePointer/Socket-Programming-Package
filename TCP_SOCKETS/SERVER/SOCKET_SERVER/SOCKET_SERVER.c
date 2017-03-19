@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <unistd.h>		// write()
+#include <string.h>		// strlen()
 
 int main()
 {
@@ -52,7 +54,7 @@ int main()
 	/* Reply to the client */
 	char *message;
 	message = "Hi mr client. I just recieved your connection request";
-	write(newSocketDsc,message,(sizeof)message);
+	write(newSocketDsc,message,strlen(message));
 	
 
 return 0;
