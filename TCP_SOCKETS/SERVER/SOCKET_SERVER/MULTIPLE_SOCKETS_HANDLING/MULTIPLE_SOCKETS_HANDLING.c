@@ -14,6 +14,9 @@
 #include <string.h>		// strlen()
 #include <pthread.h>	// multithreading
 
+/* Connection handler */
+void *connection_handler(void *);
+
 int main()
 {
 	int socketDsc;
@@ -82,3 +85,11 @@ int main()
 			
 return 0;
 }
+
+void *connection_handler(void *socketDsc)
+{
+
+
+
+}
+
