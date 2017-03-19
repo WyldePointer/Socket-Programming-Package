@@ -12,6 +12,7 @@
 #include <sys/socket.h>
 #include <unistd.h>		// write()
 #include <string.h>		// strlen()
+#include <pthread.h>	// multithreading
 
 int main()
 {
