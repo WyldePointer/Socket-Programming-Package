@@ -67,6 +67,10 @@ int main()
 			return 1;
 		}
 		
+		/* join the thread , so that we dont terminate before the thread */
+		pthread_join(response_thread,NULL);
+		puts("Handler assigned");
+		
 	}
 	
 	if(newSocketDsc < 0)
