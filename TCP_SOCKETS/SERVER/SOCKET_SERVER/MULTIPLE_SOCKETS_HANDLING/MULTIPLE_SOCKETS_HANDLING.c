@@ -61,7 +61,7 @@ int main()
 		write(newSocketDsc,message,strlen(message));
 		
 		/* Create a new thread for that new socket (client) */
-		pthread response_thread;
+		pthread_t response_thread;
 		new_sock = malloc(1);
 		*new_sock = newSocketDsc;
 		
