@@ -13,6 +13,7 @@
 #include <unistd.h>		// write()
 #include <string.h>		// strlen()
 #include <pthread.h>	// multithreading
+#include <stdlib.h>		// free()
 
 /* Connection handler */
 void *connection_handler(void *);
