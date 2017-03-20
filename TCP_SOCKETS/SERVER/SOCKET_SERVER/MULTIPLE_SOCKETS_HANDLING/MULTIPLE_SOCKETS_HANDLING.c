@@ -94,8 +94,10 @@ void *connection_handler(void *socketDsc)
 {
     //Get the socket descriptor
     int sock = *(int*)socketDsc;
-     
     char *message;
+    /* User Data Variables */
+    int readSize;
+    char userMessage[2000];
      
     //Send some messages to the client
     message = "Greetings! I am your connection handler\n";
