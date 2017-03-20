@@ -119,8 +119,11 @@ void *connection_handler(void *socketDsc)
 		puts("Client disconnected :|");
 		fflush(stdout);
 	}
-	
-	
+	else if (readSize == -1)
+	{
+		perror("Recieving failed");
+	}
+
     //Free the socket pointer
     free(socketDsc);
     
