@@ -103,9 +103,13 @@ void *connection_handler(void *socketDsc)
      
     message = "Its my duty to communicate with you";
     write(sock , message , strlen(message));
+    
+    // Get the data, messages from the user
      
     //Free the socket pointer
     free(socketDsc);
+    
+    
      
     return 0;
 }
