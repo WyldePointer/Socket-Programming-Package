@@ -107,7 +107,20 @@ void *connection_handler(void *socketDsc)
     write(sock , message , strlen(message));
     
     // Get the data, messages from the user
-     
+    while((readSize = recv(sock,userMessage,2000,0)) > 0)
+    {
+		/* Send back that message to himself :D */
+		write(sock,userMessage,strlen(userMessage));
+	}
+	
+	/* Check if nothing was recieved */
+	if(readSize == 0)
+	{
+		puts("Client disconnected :|");
+		fflush(stdout);
+	}
+	
+	
     //Free the socket pointer
     free(socketDsc);
     
