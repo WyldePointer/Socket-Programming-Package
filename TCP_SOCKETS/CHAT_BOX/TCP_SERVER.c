@@ -32,7 +32,7 @@ int main()
 	struct sockaddr_in addr, client_addr;
 	char buffer[BUF_SIZE];
 	pid_t childpid;
-	char clientAddr[CL_ADDR_LEN];
+	char clientAddr[CLADDR_LEN];
 	pthread_t thread;
 	
 	/* Create the socket */
@@ -66,7 +66,7 @@ int main()
 	
 	/* Accept new connections */
 	len = sizeof(client_addr);
-	newsockDsc = accept(sockDsc,(struct sockaddr *)&client_addr,&len);
+	newsockDsc = accept(sockDsc,(struct sockaddr *)&client_addr,(socklen_t*)&len);
 	if (newsockDsc < 0)
 	{
 		perror("Error accepting the connection");
