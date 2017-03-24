@@ -82,7 +82,10 @@ int main()
 		return 1;
 	}
 	
-	
+	close(newsockDsc);
+	close(sockDsc);
+	pthread_exit(NULL);
+	return 0;
 
 }
 
