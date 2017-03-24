@@ -15,6 +15,7 @@
 #include <string.h>
 #include <netinet/in.h>
 #include <pthread.h>
+#include <arpa/inet.h>
 
 
 #define PORT 4444
