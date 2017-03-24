@@ -108,7 +108,7 @@ void * recieveMessage(void * socket)
 	/* Variables and Conversions */
 	int sockDsc, ret;
 	char buffer[BUF_SIZE];
-	sockDsc = (int)socket;
+	sockDsc = *(int *)socket;
 	memset(buffer,0,BUF_SIZE);
 	
 	/* Recieve messages from client in the thread */
