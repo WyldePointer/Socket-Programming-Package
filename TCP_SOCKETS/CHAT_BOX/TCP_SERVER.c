@@ -9,7 +9,13 @@
 */
 
 #include <stdio.h>
-#include <stdib.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <string.h>
+#include <netinet/in.h>
+#include <pthread.h>
+
 
 #define PORT 4444
 #define BUF_SIZE 2000
@@ -90,7 +96,6 @@ int main()
 	return 0;
 
 }
-
 
 void * recieveMessage(void * socket)
 {
