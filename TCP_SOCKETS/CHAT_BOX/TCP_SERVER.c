@@ -40,6 +40,16 @@ int main()
 	addr.sin_addr.s_addr = INADDR_ANY;
 	addr.sin_port = PORT;
 	
+	/* Bind the server to the addr */
+	bindRet = bind(sockDsc,(struct sockaddr*)&addr,sizeof(addr));
+	if (bindRet < 0)
+	{
+		perror("Binding failed!");
+		return 1;
+	}
+	printf("binding done");
+	
+	
 	
 
 
