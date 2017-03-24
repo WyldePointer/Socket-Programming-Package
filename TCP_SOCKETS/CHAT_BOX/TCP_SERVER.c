@@ -100,8 +100,19 @@ void * recieveMessage(void * socket)
 	sockDsc = (int)socket;
 	memset(buffer,0,BUF_SIZE);
 	
-
-	
+	/* Recieve messages from client in the thread */
+	for(;;)
+	{
+		ret = recvfrom(sockDsc,buffer,BUF_SIZE,0,NULL,NULL);
+		if(ret < 0)
+			printf("Error recieving data!\n");
+		else
+		{
+			printf("client: ");
+			fputs(buffer,stdout);
+			printf("\n");
+		}
+	}
 }
 
 
