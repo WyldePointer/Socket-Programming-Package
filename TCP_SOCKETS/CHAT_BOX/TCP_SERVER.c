@@ -20,7 +20,7 @@ int main()
 {
 	/* Define variables */
 	int sockDsc, newsockDsc;
-	int bindRet,len;		// len is client address size 
+	int bindRet,len, pthreadRet;		// len is client address size 
 	struct sockaddr_in addr, client_addr;
 	char buffer[BUF_SIZE];
 	pid_t childpid;
@@ -69,7 +69,13 @@ int main()
 	inet_ntop(AF_INET, &(client_addr.sin_addr), clientAddr, CLADDR_LEN);
 	printf("Connection accepted from %s...\n", clientAddr); 
 	
-
+	
+	/* Recieve messages */
+	memset(buffer, 0, BUF_SIZE);
+	printf("Enter your messages one by one and hit enter");
+	/* Create a thread to grab the messages from the client */
+	pthreadRet = pthread_create(&thread,NULL,recieveMessage,(void *)newsockDsc);
+	
 
 }
 
