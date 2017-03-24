@@ -15,6 +15,8 @@
 #define BUF_SIZE 2000
 #define CLADDR_LEN 100
 
+/* pthread connection handler */
+void * recieveMessage(void *);
 
 int main()
 {
@@ -88,5 +90,14 @@ int main()
 	return 0;
 
 }
+
+
+void * recieveMessage(void * sockDsc)
+{
+	
+
+	
+}
+
 
 	
