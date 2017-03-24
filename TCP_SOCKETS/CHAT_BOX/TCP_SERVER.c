@@ -30,10 +30,10 @@ int main()
 {
 	/* Define variables */
 	int sockDsc, newsockDsc;
+	int *newSock;
 	int bindRet,len, pthreadRet;		// len is client address size 
 	struct sockaddr_in addr, client_addr;
 	char buffer[BUF_SIZE];
-	pid_t childpid;
 	char clientAddr[CLADDR_LEN];
 	pthread_t thread;
 	
@@ -84,7 +84,11 @@ int main()
 	memset(buffer, 0, BUF_SIZE);
 	printf("Enter your messages one by one and hit enter");
 	/* Create a thread to grab the messages from the client */
-	pthreadRet = pthread_create(&thread,NULL,recieveMessage,(void *)newsockDsc);
+	
+	/* Removes warnings */
+	newSock = malloc(1);
+	*newSock = newsockDsc;
+	pthreadRet = pthread_create(&thread,NULL,recieveMessage,(void *)newSock);
 	/* Handle errors */
 	if(pthreadRet < 0)
 	{
