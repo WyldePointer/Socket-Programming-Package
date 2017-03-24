@@ -92,8 +92,13 @@ int main()
 }
 
 
-void * recieveMessage(void * sockDsc)
+void * recieveMessage(void * socket)
 {
+	/* Variables and Conversions */
+	int sockDsc, ret;
+	char buffer[BUF_SIZE];
+	sockDsc = (int)socket;
+	memset(buffer,0,BUF_SIZE);
 	
 
 	
