@@ -11,7 +11,9 @@
 #include <stdio.h>
 #include <stdib.h>
 
-
+#define PORT 4444
+#define BUF_SIZE 2000
+#define CLADDR_LEN 100
 
 
 int main()
@@ -63,6 +65,9 @@ int main()
 		return 1;
 	}
 	
+	/* Convert IP from long to string in internet standard format */
+	inet_ntop(AF_INET, &(client_addr.sin_addr), clientAddr, CLADDR_LEN);
+	printf("Connection accepted from %s...\n", clientAddr); 
 	
 
 
