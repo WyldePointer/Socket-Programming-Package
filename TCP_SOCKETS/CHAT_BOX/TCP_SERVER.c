@@ -49,6 +49,10 @@ int main()
 	}
 	printf("binding done");
 	
+	/* Listen to new connections */
+	printf("\nWaiting for a new connection...\n");
+	listen(sockDsc,5);
+	
 	
 	
 
