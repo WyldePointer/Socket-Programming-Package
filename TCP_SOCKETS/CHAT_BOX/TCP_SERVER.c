@@ -18,7 +18,7 @@ int main()
 {
 	/* Define variables */
 	int sockDsc, newsockDsc;
-	int bindRet,len;
+	int bindRet,len;		// len is client address size 
 	struct sockaddr_in addr, client_addr;
 	char buffer[BUF_SIZE];
 	pid_t childpid;
@@ -53,6 +53,15 @@ int main()
 	printf("\nWaiting for a new connection...\n");
 	listen(sockDsc,5);
 	
+	
+	/* Accept new connections */
+	len = sizeof(client_addr);
+	newsockDsc = accept(sockDsc,(struct sockaddr *)&client_addr,&len);
+	if (newsockDsc < 0)
+	{
+		perror("Error accepting the connection");
+		return 1;
+	}
 	
 	
 
