@@ -75,6 +75,13 @@ int main()
 	printf("Enter your messages one by one and hit enter");
 	/* Create a thread to grab the messages from the client */
 	pthreadRet = pthread_create(&thread,NULL,recieveMessage,(void *)newsockDsc);
+	/* Handle errors */
+	if(pthreadRet < 0)
+	{
+		printf("ERROR: return code form pthread_create() is  %d\n",pthreadRet);
+		return 1;
+	}
+	
 	
 
 }
