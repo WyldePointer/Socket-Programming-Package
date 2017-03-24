@@ -23,6 +23,15 @@ int main()
 	pid_t childpid;
 	char clientAddr[CL_ADDR_LEN];
 	pthread_t thread;
+	
+	/* Create the socket */
+	sockDsc = socket(AF_INET, SOCK_STREAM, 0);
+	if(sockDsc < 0)
+	{
+		perror("Error creating the socket");
+		return 1;
+	}
+	printf("Socket created successfully");
 
 
 }
