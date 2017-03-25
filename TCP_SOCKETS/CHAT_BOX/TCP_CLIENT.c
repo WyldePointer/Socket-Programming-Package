@@ -43,5 +43,13 @@ int main()
 	addr.sin_addr.s_addr = inet_addr(serverAddr);
 	addr.sin_port = PORT;
 	
+	/* Connect the socket to the server */
+	ret = connect(sockfd, (struct sockaddr *) &addr, sizeof(addr));  
+	if (ret < 0)
+	{  
+		perror("Error connecting to the server!");  
+		exit(1);  
+	}  
+	printf("Connected to the server...\n");
 	
 }
