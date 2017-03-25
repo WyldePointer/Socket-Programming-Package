@@ -37,4 +37,11 @@ int main()
 	}
 	printf("Socket created");
 	
+	/* Configure the socket */
+	memset(&addr,0,sizeof(addr));
+	addr.sin_family = AF_INET;
+	addr.sin_addr.s_addr = inet_addr(serverAddr);
+	addr.sin_port = PORT;
+	
+	
 }
