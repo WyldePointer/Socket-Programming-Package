@@ -28,6 +28,13 @@ int main()
 	char *serverAddr;
 	pthread_t thread;
 	
-	
+	/* create the client socket */
+	sockDsc = socket(AF_INET,SOCK_STREAM,0);
+	if(sockDsc < 0)
+	{
+		perror("Error occured while creating the socket");
+		return 1;
+	}
+	printf("Socket created");
 	
 }
