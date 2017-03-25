@@ -18,6 +18,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define PORT 4444 
 #define BUF_SIZE 2000
@@ -27,8 +28,9 @@ void * receiveMessage(void *);
 int main()
 {
 	/* Define variables */
-	struct sockaddr_in addr,client_addr;
+	struct sockaddr_in addr;
 	int sockDsc,ret;
+	int * newSock;
 	char buffer[BUF_SIZE];
 	char *serverAddr;
 	pthread_t thread;
@@ -42,6 +44,7 @@ int main()
 	}
 	printf("Socket created");
 	
+	/* Add server address */
 	/* Configure the socket */
 	memset(&addr,0,sizeof(addr));
 	addr.sin_family = AF_INET;
@@ -61,7 +64,9 @@ int main()
 	memset(buffer,0,BUF_SIZE);
 	printf("Enter your message and press enter");
 	/* Create a new thread to grab the messages from the server */
-	ret = pthread_create(&thread,NULL,receiveMessage,(void*)sockDsc);
+	newSock = malloc(1);
+	*newSock = sockDsc;
+	ret = pthread_create(&thread,NULL,receiveMessage,(void*)newSock);
 	if(ret)
 	{
 		printf("ERROR: Return code from pthread_create() is %d\n",ret);
