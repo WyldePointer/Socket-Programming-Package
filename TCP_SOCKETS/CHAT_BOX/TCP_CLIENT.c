@@ -85,11 +85,25 @@ int main()
 	 return 0;
 }
  
+/* Response Handler thread */
 void *receiveMessage(void * socket)
 {
 	int sockDsc,ret;
 	char buffer[BUF_SIZE];
 	sockDsc = *(int *)socket;
 	memset(buffer,0,BUF_SIZE);
-	
+	for (;;)
+	{
+		ret = recvfrom(sockDsc, buffer, BUF_SIZE, 0, NULL, NULL);  
+		if (ret < 0)
+		{  
+			printf("Error receiving data!\n");    
+		}
+		else
+		{
+			printf("server: ");
+			fputs(buffer, stdout);
+			printf("\n");
+		}  
+	}
 }
