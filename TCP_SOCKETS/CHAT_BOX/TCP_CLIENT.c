@@ -52,4 +52,19 @@ int main()
 	}  
 	printf("Connected to the server...\n");
 	
+	/* recieving the messages to the server */
+	memset(buffer,0,BUF_SIZE);
+	printf("Enter your message and press enter");
+	/* Create a new thread to grab the messages from the server */
+	ret = pthread_create(&thread,NULL,receiveMessage,(void*)sockDsc);
+	if(ret)
+	{
+		printf("ERROR: Return code from pthread_create() is %d\n",ret);
+		return 1;
+	}
+	
+	
+	
+	
+	
 }
