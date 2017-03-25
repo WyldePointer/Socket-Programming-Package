@@ -22,6 +22,8 @@
 #define PORT 4444 
 #define BUF_SIZE 2000
 
+void * receiveMessage(void *);
+
 int main()
 {
 	/* Define variables */
@@ -47,7 +49,7 @@ int main()
 	addr.sin_port = PORT;
 	
 	/* Connect the socket to the server */
-	ret = connect(sockfd, (struct sockaddr *) &addr, sizeof(addr));  
+	ret = connect(sockDsc, (struct sockaddr *) &addr, sizeof(addr));  
 	if (ret < 0)
 	{  
 		perror("Error connecting to the server!");  
@@ -83,3 +85,11 @@ int main()
 	 return 0;
 }
  
+void *receiveMessage(void * socket)
+{
+	int sockDsc,ret;
+	char buffer[BUF_SIZE];
+	sockDsc = *(int *)socket;
+	memset(buffer,0,BUF_SIZE);
+	
+}
