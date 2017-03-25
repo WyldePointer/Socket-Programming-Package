@@ -52,7 +52,7 @@ int main()
 	}  
 	printf("Connected to the server...\n");
 	
-	/* recieving the messages to the server */
+	/* recieving the messages from the server */
 	memset(buffer,0,BUF_SIZE);
 	printf("Enter your message and press enter");
 	/* Create a new thread to grab the messages from the server */
@@ -63,8 +63,16 @@ int main()
 		return 1;
 	}
 	
-	
-	
-	
+	/* While user is sending messages to the server,
+	 * send them to the server! */
+	 while(fgets(buffer,BUF_SIZE,stdin) != NULL)
+	 {
+		 ret = sendto(sockDsc,buffer,BUF_SIZE,0,(struct sockaddr *)&addr,sizeof(addr));
+		 if(ret < 0)
+		 {
+			 printf("Error sending the data!\n\t-%s",buffer);
+		 }
+	 }
+	 
 	
 }
