@@ -21,5 +21,13 @@
 
 int main()
 {
-		
+	/* Define variables */
+	struct sockaddr_in addr,client_addr;
+	int sockDsc,ret;
+	char buffer[BUF_SIZE];
+	char *serverAddr;
+	pthread_t thread;
+	
+	
+	
 }
