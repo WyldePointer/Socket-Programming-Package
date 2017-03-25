@@ -19,6 +19,9 @@
 #include <netdb.h>
 #include <pthread.h>
 
+#define PORT 4444 
+#define BUF_SIZE 2000
+
 int main()
 {
 	/* Define variables */
