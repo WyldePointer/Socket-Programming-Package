@@ -74,5 +74,9 @@ int main()
 		 }
 	 }
 	 
-	
+	 /* wrap-up everything */
+	 close(sockDsc);
+	 pthread_exit(NULL);
+	 return 0;
 }
+ 
