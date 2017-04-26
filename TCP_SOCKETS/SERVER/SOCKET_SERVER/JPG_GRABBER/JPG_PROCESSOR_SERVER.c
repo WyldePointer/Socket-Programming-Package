@@ -17,3 +17,16 @@
 /* Needed for file reading purposes */
 #include <fstream.h>
 #include <iostream.h>
+
+int main()
+{
+  /* Needed for socket connections */
+  int sockDsc;
+  /* Needed for client and server entities */
+  struct sockaddr_in client, server;
+  
+
+
+
+  return 0;
+}
