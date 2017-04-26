@@ -48,5 +48,9 @@ int main()
   }
   printf("binding done.\n");
 
+  /* Listen for connections */
+  listen(socketDsc,3);
+    
+
   return 0;
 }
