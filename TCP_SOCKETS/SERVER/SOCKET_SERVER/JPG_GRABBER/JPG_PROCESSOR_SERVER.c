@@ -33,8 +33,11 @@ int main()
     perror("Socket creation failed.");
     return 1;
   }
-  
 
+  /* Configure sockaddr_in */
+  server.sin_family = AF_INET;
+  server.sin_addr.s_addr = INADDR_ANY;
+  server.sin_port = htons(8890);
 
   return 0;
 }
