@@ -50,7 +50,13 @@ int main()
 
   /* Listen for connections */
   listen(socketDsc,3);
-    
+  /* Accept incoming connections */
+  printf("Waiting for any connections...\n");
+  if(newsocketDsc = accept(socketDsc,(struct * sockaddr)&client,(socklen_t *)&c))
+  {
+      /* Connection accepted */
+      puts("Connection accepted");
+  }
 
   return 0;
 }
