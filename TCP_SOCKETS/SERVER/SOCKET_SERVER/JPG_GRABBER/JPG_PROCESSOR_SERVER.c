@@ -39,5 +39,14 @@ int main()
   server.sin_addr.s_addr = INADDR_ANY;
   server.sin_port = htons(8890);
 
+  /* Bind the socket to the port */
+  if(bind(sockDsc,(struct * sockaddr)&server,sizeof(server)) < 0)
+  {
+    /* Binding failed */
+    perror("Binding failed.");
+    return 1;
+  }
+  printf("binding done.\n");
+
   return 0;
 }
