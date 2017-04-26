@@ -13,3 +13,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <string.h>
+/* Exclusive Headers */
+/* Needed for file reading purposes */
+#include <fstream.h>
+#include <iostream.h>
