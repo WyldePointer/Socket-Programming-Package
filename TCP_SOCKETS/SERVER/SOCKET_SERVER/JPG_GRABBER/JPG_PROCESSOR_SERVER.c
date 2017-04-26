@@ -24,8 +24,16 @@ int main()
   int sockDsc;
   /* Needed for client and server entities */
   struct sockaddr_in client, server;
-  
 
+  /* Create a socket */
+  socketDsc = socket(AF_INET, SOCK_STREAM, 0);
+  if(socketDsc < 0)
+  {
+    /* Socket creation failed */
+    perror("Socket creation failed.");
+    return 1;
+  }
+  
 
 
   return 0;
