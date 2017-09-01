@@ -10,13 +10,14 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
-#include <unistd.h>		// write()
-#include <string.h>		// strlen()
+#include <unistd.h>
+#include <string.h>
 
 int main()
 {
-	int socketDsc;
-	struct sockaddr_in server;
+	int socketDsc, newSocketDsc, temp_size;
+	struct sockaddr_in client, server;
+	char *message = "Hi mr client. I just recieved your connection request";
 	
 	/* Create the socket server */
 	socketDsc = socket(AF_INET, SOCK_STREAM, 0);
@@ -42,9 +43,6 @@ int main()
 	
 	/* Accept the incoming connections */
 	puts("Waiting for incoming connections");
-	int newSocketDsc;
-	int temp_size;
-	struct sockaddr_in client;
 	newSocketDsc = accept(socketDsc, (struct sockaddr*)&client, (socklen_t*)&temp_size);
 	if(newSocketDsc < 0)
 		perror("Accepting failed...");
@@ -52,8 +50,6 @@ int main()
 		puts("Connection accepted...");
 		
 	/* Reply to the client */
-	char *message;
-	message = "Hi mr client. I just recieved your connection request";
 	write(newSocketDsc,message,strlen(message));
 	
 
