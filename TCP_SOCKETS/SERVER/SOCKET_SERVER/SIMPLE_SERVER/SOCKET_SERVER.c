@@ -18,9 +18,10 @@ int main()
 	int socketDsc, newSocketDsc, temp_size;
 	struct sockaddr_in client, server;
 	char *message = "Hi mr client. I just recieved your connection request";
-	
+
 	/* Create the socket server */
 	socketDsc = socket(AF_INET, SOCK_STREAM, 0);
+
 	if(socketDsc == -1)
 	{
 		fprintf(stderr, "Cannot create the socket");
@@ -33,26 +34,31 @@ int main()
 	server.sin_port = htons(8888);
 	
 	/* Bind the socket to a port */
-	if(bind(socketDsc, (struct sockaddr*)&server, sizeof(server)) < 0)
+	if(bind(socketDsc, (struct sockaddr*)&server, sizeof(server)) < 0){
 		puts("bind failed");
-	else
+	} else {
 		puts("bind done");
+	}
 
 	/* Listen for connections with backlog queue size = 5 */
 	listen(socketDsc,5);
-	
-	/* Accept the incoming connections */
+
 	puts("Waiting for incoming connections");
-	newSocketDsc = accept(socketDsc, (struct sockaddr*)&client, (socklen_t*)&temp_size);
-	if(newSocketDsc < 0)
+
+	/* Accept the incoming connections */
+	newSocketDsc = accept(socketDsc, (struct sockaddr*)&client,
+		(socklen_t*)&temp_size);
+
+	if(newSocketDsc < 0){
 		perror("Accepting failed...");
-	else
+	} else {
 		puts("Connection accepted...");
-		
+	}
+
 	/* Reply to the client */
 	write(newSocketDsc,message,strlen(message));
-	
 
-return 0;
+
+  return 0;
 }
 
