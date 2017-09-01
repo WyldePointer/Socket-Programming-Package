@@ -50,7 +50,7 @@ int main()
 		(socklen_t*)&temp_size);
 
 	if(newSocketDsc < 0){
-		perror("Accepting failed...");
+		perror("accept");
 	} else {
 		puts("Connection accepted...");
 	}
