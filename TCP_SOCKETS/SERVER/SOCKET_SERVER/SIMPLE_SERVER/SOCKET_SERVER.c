@@ -23,7 +23,7 @@ int main()
 	socketDsc = socket(AF_INET, SOCK_STREAM, 0);
 	if(socketDsc == -1)
 	{
-		printf("Cannot create the socket");
+		fprintf(stderr, "Cannot create the socket");
 		return 1;
 	}
 	
